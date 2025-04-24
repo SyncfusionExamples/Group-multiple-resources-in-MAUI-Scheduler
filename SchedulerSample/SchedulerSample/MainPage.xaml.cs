@@ -29,25 +29,25 @@ namespace SchedulerSample
 
     public class Employee
     {
-        public string Name { get; set; }
-        public string Id { get; set; }
-        public Brush BackgroundColor { get; set; }
-        public Brush ForegroundColor { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Id { get; set; } = string.Empty;  
+        public Brush? BackgroundColor { get; set; }
+        public Brush? ForegroundColor { get; set; }
     }
 
     public class Model
     {
-        public string EventName { get; set; }
+        public string EventName { get; set; } = string.Empty;   
         public DateTime From { get; set; }
         public DateTime To { get; set; }
-        public Brush Background { get; set; }
-        public ObservableCollection<object> ResourceIds { get; set; }
+        public Brush? Background { get; set; }
+        public ObservableCollection<object>? ResourceIds { get; set; }
     }
 
     public class ViewModel
     {
-        public ObservableCollection<Model> CustomEvents { get; set; }
-        public ObservableCollection<Employee> CustomResources { get; set; }
+        public ObservableCollection<Model>? CustomEvents { get; set; }
+        public ObservableCollection<Employee>? CustomResources { get; set; }
 
         public ViewModel()
         {

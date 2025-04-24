@@ -10,6 +10,7 @@
     </ContentPage.BindingContext>
 
     <scheduler:SfScheduler x:Name="scheduler"
+                           x:DataType="local:ViewModel"
                        AppointmentsSource="{Binding CustomEvents}"
                        View="TimelineMonth"
                        AllowedViews="TimelineDay,TimelineWeek,TimelineMonth"
@@ -22,12 +23,19 @@
                                                    ResourceIds="ResourceIds"/>
         </scheduler:SfScheduler.AppointmentMapping>
         <scheduler:SfScheduler.ResourceView>
-            <scheduler:SchedulerResourceView Resources="{Binding CustomResources}">
+            <scheduler:SchedulerResourceView 
+                x:DataType="local:ViewModel"
+                Resources="{Binding CustomResources}">
                 <scheduler:SchedulerResourceView.HeaderTemplate>
                 <DataTemplate>
-                    <Border Background="{Binding Background}" Stroke="Black"
+                    <Border 
+                        x:DataType="local:Model"
+                        Background="{Binding Background}" Stroke="Black"
                             StrokeThickness="1">
-                        <Label Text="{Binding Name}" VerticalOptions="CenterAndExpand"
+                        <Label 
+                            x:DataType="local:Employee"
+                            Text="{Binding Name}" 
+                               VerticalOptions="CenterAndExpand"
                                HorizontalTextAlignment="Center"/>
                     </Border>
                 </DataTemplate>
